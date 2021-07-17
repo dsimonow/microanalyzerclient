@@ -1,0 +1,5 @@
+fhdortmund\mdb\microanalyzerclient\engine\Consumer.class
+fhdortmund\mdb\microanalyzerclient\engine\Producer.class
+fhdortmund\mdb\microanalyzerclient\MicroanalyzerclientApplication.class
+fhdortmund\mdb\microanalyzerclient\models\User.class
+fhdortmund\mdb\microanalyzerclient\controllers\KafkaController.class
