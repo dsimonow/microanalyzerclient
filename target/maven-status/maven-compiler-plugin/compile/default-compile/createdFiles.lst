@@ -1,5 +1,9 @@
-fhdortmund\mdb\microanalyzerclient\engine\Consumer.class
 fhdortmund\mdb\microanalyzerclient\engine\Producer.class
-fhdortmund\mdb\microanalyzerclient\MicroanalyzerclientApplication.class
+fhdortmund\mdb\microanalyzerclient\controllers\DummyController21.class
 fhdortmund\mdb\microanalyzerclient\models\User.class
 fhdortmund\mdb\microanalyzerclient\controllers\KafkaController.class
+fhdortmund\mdb\microanalyzerclient\MicroanalyzerclientApplication.class
+fhdortmund\mdb\microanalyzerclient\engine\Consumer.class
+fhdortmund\mdb\microanalyzerclient\controllers\DummyController2.class
+fhdortmund\mdb\microanalyzerclient\controllers\DummyController.class
+fhdortmund\mdb\microanalyzerclient\controllers\DummyController3.class
