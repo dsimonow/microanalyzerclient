@@ -5,6 +5,7 @@ import fhdortmund.mdb.microanalyzerclient.engine.Producer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Profile;
 import org.springframework.http.HttpMethod;
@@ -18,8 +19,15 @@ import org.springframework.web.client.RestTemplate;
 public class DummyController3 {
     private static final Logger LOG = LoggerFactory.getLogger(DummyController3.class);
 
+    String serviceName = "askTwoEndpoint";
     @Autowired
     RestTemplate restTemplate;
+
+    private final Producer producer;
+    @Autowired
+    DummyController3(Producer producer) {
+        this.producer = producer;
+    }
     @Bean
     public RestTemplate getRestTemplate() {
         return new RestTemplate();
@@ -34,6 +42,7 @@ public class DummyController3 {
         LOG.info("In Dummy 3");
         String url = "http://localhost:9002/dummy";
         String response = (String) restTemplate.exchange(url, HttpMethod.GET, null, String.class).getBody();
+        this.producer.sendMessage(this.producer.makeRelationshipJSON(serviceName, "/dummy2", "extraRequestEndpoint"));
         LOG.info("Antwort von Dummy 3 " + response + "und eine Extra Ebene");
         return "Dummyserver 3 Ergebnis: "+ response;
     }

@@ -23,13 +23,12 @@ services:
       NEO4J_kafka_group_id: "neo4j"
       NEO4J_kafka_group_instance_id: "neo4j"
       NEO4J_streams_sink_enabled: "true"
-      NEO4J_streams_sink_topic_pattern_node_InitAPI: "API{!name}"
-      #NEO4J_streams_sink_topic_cypher_InitAPI: "CREATE (a:API {name: event.name})"
-      NEO4J_streams_sink_topic_cypher_API: "MATCH (current:API {name: event.name}) MATCH (target:API {name: event.zielname}) MERGE (current)-[:REQUESTS]->(target)"
-      #NEO4J_streams_sink_topic_pattern_relationship_API: "API{name:!name} REQUESTS{apibefehl} API{name:!zielname}"
-      #NEO4J_streams_sink_topic_pattern_relationship_API: "(a:API{name:!name})-[b:BOUGHT{apibefehl}]->(a:API{name:zielname})"
+      #NEO4J_streams_sink_topic_cypher_USERS: "MERGE (a:Article {id: event.ID}) ON CREATE set a.descr = event.og_description"
+      #NEO4J_streams_sink_topic_pattern_relationship_USERS: "User{!userId} BOUGHT{price, currency} Product{!productId}"
+      #NEO4J_streams_sink_topic_pattern_relationship_USERS: "(:User{!userId})-[:BOUGHT{price, currency}]->(:Product{!productId})"
       #NEO4J_streams_sink_topic_pattern_relationship_ZIPKIN: "Endpoint{!traceid"
-      #NEO4J_streams_sink_topic_pattern_relationship_ZIPKIN: "Trace{!traceid} REQUESTS{kind} Span{!parentId}"
+      NEO4J_streams_sink_topic_pattern_relationship_ZIPKIN: "Trace{!traceid} REQUESTS{kind} Span{!parentId}"
+      #NEO4j_streams_sink_topic_pattern_node_ZIPKIN: "Endpoint{!localEndpoint.serviceName,*}"
       NEO4J_streams_procedures_enabled: "true"
 
   zookeeper:
@@ -67,6 +66,21 @@ services:
       #KAFKA_JMX_PORT: 9101
       #KAFKA_JMX_HOSTNAME: "localhost"
 
+  storage:
+    image: ghcr.io/openzipkin/zipkin-elasticsearch7:${TAG:-latest}
+    container_name: elasticsearch
+    ports:
+      - 9200:9200
+  
+  kib01:
+    image: docker.elastic.co/kibana/kibana-oss:7.10.1
+    container_name: kib01
+    ports:
+      - 5601:5601
+    environment:
+      ELASTICSEARCH_URL: http://elasticsearch:9200
+      ELASTICSEARCH_HOSTS: '["http://elasticsearch:9200"]'
+
   # The zipkin process services the UI, and also exposes a POST endpoint that
   # instrumentation can send trace data to.
   zipkin:
@@ -75,11 +89,12 @@ services:
     # Environment settings are defined here https://github.com/openzipkin/zipkin/blob/master/zipkin-server/README.md#environment-variables
     depends_on:
       - broker
+      - storage
     environment:
       - KAFKA_BOOTSTRAP_SERVERS=broker:19092
-      #- STORAGE_TYPE=elasticsearch
+      - STORAGE_TYPE=elasticsearch
       # Point the zipkin at the storage backend
-      #- ES_HOSTS=elasticsearch:9200
+      - ES_HOSTS=elasticsearch:9200
       # Uncomment to see requests to and from elasticsearch
       # - ES_HTTP_LOGGING=BODY
     ports:
@@ -87,3 +102,13 @@ services:
       - 9411:9411
     # Uncomment to enable debug logging
     # command: --logging.level.zipkin2=DEBUG
+
+  dependencies:
+    image: ghcr.io/openzipkin/zipkin-dependencies
+    container_name: dependencies
+    entrypoint: crond -f
+    environment:
+      - STORAGE_TYPE=elasticsearch
+      - ES_HOSTS=elasticsearch
+    depends_on:
+      - storage

@@ -18,10 +18,10 @@ public class Consumer {
         logger.info(String.format("#### -> Consumed message -> %s", message));
     }
 
+/*
     @KafkaListener(topics = "zipkin", groupId = "group_id")
     public void consumeTrace(String message) throws IOException {
-        logger.info(String.format("#### -> Consumed message -> %s", message));
+        System.out.println("#### -> Consumed message -> " + message);
     }
-
-
+*/
 }

@@ -1,0 +1,326 @@
+{
+    "traceId": "3396dc3b4fcd1e35",
+    "id": "3396dc3b4fcd1e35",
+    "kind": "CONSUMER",
+    "name": "poll",
+    "timestamp": 1626694094573607,
+    "duration": 1,
+    "localEndpoint": {
+        "serviceName": "mainservice",
+        "ipv4": "192.168.188.36"
+    },
+    "remoteEndpoint": {
+        "serviceName": "kafka"
+    },
+    "tags": {
+        "kafka.topic": "zipkin"
+    }
+},
+{
+    "traceId": "3396dc3b4fcd1e35",
+    "parentId": "3396dc3b4fcd1e35",
+    "id": "d0b1b4108821e7cd",
+    "name": "on-message",
+    "timestamp": 1626694094573573,
+    "duration": 268,
+    "localEndpoint": {
+        "serviceName": "mainservice",
+        "ipv4": "192.168.188.36"
+    }
+},
+{
+    "traceId": "a48f15e9524bf34b",
+    "parentId": "a48f15e9524bf34b",
+    "id": "84541ad46e1473a4",
+    "kind": "CLIENT",
+    "name": "get",
+    "timestamp": 1626694095534378,
+    "duration": 15095,
+    "localEndpoint": {
+        "serviceName": "mainservice",
+        "ipv4": "192.168.188.36"
+    },
+    "tags": {
+        "http.method": "GET",
+        "http.path": "/dummy"
+    }
+},
+{
+    "traceId": "a48f15e9524bf34b",
+    "id": "a48f15e9524bf34b",
+    "kind": "SERVER",
+    "name": "get /kafka/dummy3",
+    "timestamp": 1626694095533582,
+    "duration": 18908,
+    "localEndpoint": {
+        "serviceName": "mainservice",
+        "ipv4": "192.168.188.36"
+    },
+    "remoteEndpoint": {
+        "ipv4": "127.0.0.1",
+        "port": 57489
+    },
+    "tags": {
+        "http.method": "GET",
+        "http.path": "/kafka/dummy3",
+        "mvc.controller.class": "KafkaController",
+        "mvc.controller.method": "dummyrequest3"
+    }
+}
+{
+    "traceId": "a48f15e9524bf34b",
+    "parentId": "4af4f4f37f545a66",
+    "id": "af72cc186ef0d3e6",
+    "kind": "SERVER",
+    "name": "get /dummy",
+    "timestamp": 1626694095541577,
+    "duration": 2654,
+    "localEndpoint": {
+        "serviceName": "extrarequestendpointhelper",
+        "ipv4": "192.168.188.36"
+    },
+    "remoteEndpoint": {
+        "ipv4": "127.0.0.1",
+        "port": 57480
+    },
+    "tags": {
+        "http.method": "GET",
+        "http.path": "/dummy",
+        "mvc.controller.class": "DummyController21",
+        "mvc.controller.method": "dummyrequest"
+    },
+    "shared": true
+}
+{
+    "traceId": "a48f15e9524bf34b",
+    "parentId": "4af4f4f37f545a66",
+    "id": "af72cc186ef0d3e6",
+    "kind": "CLIENT",
+    "name": "get",
+    "timestamp": 1626694095540895,
+    "duration": 3655,
+    "localEndpoint": {
+        "serviceName": "extrarequestendpoint",
+        "ipv4": "192.168.188.36"
+    },
+    "tags": {
+        "http.method": "GET",
+        "http.path": "/dummy"
+    }
+},
+{
+    "traceId": "a48f15e9524bf34b",
+    "parentId": "84541ad46e1473a4",
+    "id": "4af4f4f37f545a66",
+    "kind": "SERVER",
+    "name": "get /dummy",
+    "timestamp": 1626694095539574,
+    "duration": 7945,
+    "localEndpoint": {
+        "serviceName": "extrarequestendpoint",
+        "ipv4": "192.168.188.36"
+    },
+    "remoteEndpoint": {
+        "ipv4": "127.0.0.1",
+        "port": 57486
+    },
+    "tags": {
+        "http.method": "GET",
+        "http.path": "/dummy",
+        "mvc.controller.class": "DummyController2",
+        "mvc.controller.method": "dummyrequest"
+    },
+    "shared": true
+}
+{
+    "traceId": "a48f15e9524bf34b",
+    "parentId": "84541ad46e1473a4",
+    "id": "4af4f4f37f545a66",
+    "kind": "CLIENT",
+    "name": "get",
+    "timestamp": 1626694095538041,
+    "duration": 9341,
+    "localEndpoint": {
+        "serviceName": "asktwoendpoint",
+        "ipv4": "192.168.188.36"
+    },
+    "tags": {
+        "http.method": "GET",
+        "http.path": "/dummy"
+    }
+},
+{
+    "traceId": "a48f15e9524bf34b",
+    "parentId": "a48f15e9524bf34b",
+    "id": "84541ad46e1473a4",
+    "kind": "SERVER",
+    "name": "get /dummy",
+    "timestamp": 1626694095536574,
+    "duration": 14079,
+    "localEndpoint": {
+        "serviceName": "asktwoendpoint",
+        "ipv4": "192.168.188.36"
+    },
+    "remoteEndpoint": {
+        "ipv4": "127.0.0.1",
+        "port": 57485
+    },
+    "tags": {
+        "http.method": "GET",
+        "http.path": "/dummy",
+        "mvc.controller.class": "DummyController3",
+        "mvc.controller.method": "dummyrequest"
+    },
+    "shared": true
+}
+{
+    "traceId": "a45a3cf9ba8b7a9c",
+    "id": "a45a3cf9ba8b7a9c",
+    "kind": "CONSUMER",
+    "name": "poll",
+    "timestamp": 1626694095577034,
+    "duration": 1,
+    "localEndpoint": {
+        "serviceName": "mainservice",
+        "ipv4": "192.168.188.36"
+    },
+    "remoteEndpoint": {
+        "serviceName": "kafka"
+    },
+    "tags": {
+        "kafka.topic": "zipkin"
+    }
+},
+{
+    "traceId": "a45a3cf9ba8b7a9c",
+    "parentId": "a45a3cf9ba8b7a9c",
+    "id": "80fcc0aea3c6907a",
+    "name": "on-message",
+    "timestamp": 1626694095577028,
+    "duration": 266,
+    "localEndpoint": {
+        "serviceName": "mainservice",
+        "ipv4": "192.168.188.36"
+    }
+},
+{
+    "traceId": "39413890209bd9dc",
+    "id": "39413890209bd9dc",
+    "kind": "CONSUMER",
+    "name": "poll",
+    "timestamp": 1626694095776604,
+    "duration": 1,
+    "localEndpoint": {
+        "serviceName": "mainservice",
+        "ipv4": "192.168.188.36"
+    },
+    "remoteEndpoint": {
+        "serviceName": "kafka"
+    },
+    "tags": {
+        "kafka.topic": "zipkin"
+    }
+},
+{
+    "traceId": "39413890209bd9dc",
+    "parentId": "39413890209bd9dc",
+    "id": "84bd78294789a81f",
+    "name": "on-message",
+    "timestamp": 1626694095777597,
+    "duration": 294,
+    "localEndpoint": {
+        "serviceName": "mainservice",
+        "ipv4": "192.168.188.36"
+    }
+},
+{
+    "traceId": "431c97689cf51ad5",
+    "id": "431c97689cf51ad5",
+    "kind": "CONSUMER",
+    "name": "poll",
+    "timestamp": 1626694095784601,
+    "duration": 1,
+    "localEndpoint": {
+        "serviceName": "mainservice",
+        "ipv4": "192.168.188.36"
+    },
+    "remoteEndpoint": {
+        "serviceName": "kafka"
+    },
+    "tags": {
+        "kafka.topic": "zipkin"
+    }
+},
+{
+    "traceId": "431c97689cf51ad5",
+    "parentId": "431c97689cf51ad5",
+    "id": "81f3bf54a70dee9f",
+    "name": "on-message",
+    "timestamp": 1626694095785591,
+    "duration": 335,
+    "localEndpoint": {
+        "serviceName": "mainservice",
+        "ipv4": "192.168.188.36"
+    }
+},
+{
+    "traceId": "accadaa1d09d22b1",
+    "id": "accadaa1d09d22b1",
+    "kind": "CONSUMER",
+    "name": "poll",
+    "timestamp": 1626694095832356,
+    "duration": 1,
+    "localEndpoint": {
+        "serviceName": "mainservice",
+        "ipv4": "192.168.188.36"
+    },
+    "remoteEndpoint": {
+        "serviceName": "kafka"
+    },
+    "tags": {
+        "kafka.topic": "zipkin"
+    }
+},
+{
+    "traceId": "accadaa1d09d22b1",
+    "parentId": "accadaa1d09d22b1",
+    "id": "258a1d2cb6bf67b3",
+    "name": "on-message",
+    "timestamp": 1626694095832867,
+    "duration": 227,
+    "localEndpoint": {
+        "serviceName": "mainservice",
+        "ipv4": "192.168.188.36"
+    }
+}
+{
+    "traceId": "17ab329de5825c7f",
+    "id": "17ab329de5825c7f",
+    "kind": "CONSUMER",
+    "name": "poll",
+    "timestamp": 1626694096578474,
+    "duration": 1,
+    "localEndpoint": {
+        "serviceName": "mainservice",
+        "ipv4": "192.168.188.36"
+    },
+    "remoteEndpoint": {
+        "serviceName": "kafka"
+    },
+    "tags": {
+        "kafka.topic": "zipkin"
+    }
+},
+{
+    "traceId": "17ab329de5825c7f",
+    "parentId": "17ab329de5825c7f",
+    "id": "4583cb5313d37fdb",
+    "name": "on-message",
+    "timestamp": 1626694096578461,
+    "duration": 388,
+    "localEndpoint": {
+        "serviceName": "mainservice",
+        "ipv4": "192.168.188.36"
+    }
+}
+]
