@@ -24,12 +24,10 @@ services:
       NEO4J_kafka_group_instance_id: "neo4j"
       NEO4J_streams_sink_enabled: "true"
       NEO4J_streams_sink_topic_pattern_node_InitAPI: "API{!name}"
-      #NEO4J_streams_sink_topic_cypher_InitAPI: "CREATE (a:API {name: event.name})"
-      NEO4J_streams_sink_topic_cypher_API: "MATCH (current:API {name: event.name}) MATCH (target:API {name: event.zielname}) MERGE (current)-[:REQUESTS]->(target)"
-      #NEO4J_streams_sink_topic_pattern_relationship_API: "API{name:!name} REQUESTS{apibefehl} API{name:!zielname}"
-      #NEO4J_streams_sink_topic_pattern_relationship_API: "(a:API{name:!name})-[b:BOUGHT{apibefehl}]->(a:API{name:zielname})"
-      #NEO4J_streams_sink_topic_pattern_relationship_ZIPKIN: "Endpoint{!traceid"
-      #NEO4J_streams_sink_topic_pattern_relationship_ZIPKIN: "Trace{!traceid} REQUESTS{kind} Span{!parentId}"
+      NEO4J_streams_sink_topic_cypher_API: 
+        "MATCH (current:API {name: event.name}) 
+        MATCH (target:API {name: event.zielname}) 
+        MERGE (current)-[:REQUESTS]->(target)"
       NEO4J_streams_procedures_enabled: "true"
 
   zookeeper:

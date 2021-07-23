@@ -54,7 +54,6 @@ public class KafkaController {
         LOG.info("Initstart");
         initSequence();
         LOG.info("Init Fertig");
-
     }
 
     @GetMapping(value = "/dummy1")
@@ -66,6 +65,7 @@ public class KafkaController {
         LOG.info("Antwort von Dummy 1 " + response);
         return "Dummyserver 1 Ergebnis: "+ response;
     }
+
     @GetMapping(value = "/dummy2")
     public String dummyrequest2() {
         LOG.info("Dummy 2 anfragen");
