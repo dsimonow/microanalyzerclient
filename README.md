@@ -1,11 +1,10 @@
 # Microservice Analyzer Tool Idee
 
-DOESN'T ACTUALLY HAVE ANY TOOL FUNCTIONALITY THAN TO SHOW HOW SOMETHING LIKE THIS COULD BE IMPLEMENTED
+### DOESN'T ACTUALLY HAVE ANY TOOL FUNCTIONALITY THAN TO SHOW HOW SOMETHING LIKE THIS COULD BE IMPLEMENTED
 
-KEINE AKTIVE ENTWICKLUNG
-NOT MAINTAINED
+### NOT MAINTAINED
 
-#Beispielhafte Implementierung von Tools zum Tracen und Begutachten von Microservice Anwendungen
+### Beispielhafte Implementierung von Tools zum Tracen und Begutachten von Microservice Anwendungen
 
  
 Übersicht des Projektes:
