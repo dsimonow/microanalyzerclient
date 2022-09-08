@@ -1,4 +1,7 @@
 # Microservice Analyzer Tool Idee
+
+KEINE AKTIVE ENTWICKLUNG
+NOT MAINTAINED
  
 Übersicht des Projektes:
 Das Projekt begutachtet und implementiert eine Handvoll Werkzeuge, die Entwicklern irgendwann bei der Umsetzung von Microservices helfen könnten, diese besser zu überwachen und Schwachstellen zu erkennen.
