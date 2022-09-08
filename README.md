@@ -31,5 +31,7 @@ Das Projekt wird nicht aktiv entwickelt und dient als persönliches Projekt Kafk
 
 Das Projekt sollte aber komplett mit dem Docker-Compose hochgefahren werden können. 
 
+Und die "startservices.sh" für die Spring Server. Es ist der gleiche Server der mit anderen Profilen gestartet wird.
+
 Docker-Compose sollte alle Zugänge zu Kafka, neo4j und Zipkin anbieten.
 Für die Spring Implementation siehe das Bild. Diese Adressen einfach paar mal ausführen mit dem Browser und die Daten werden generiert.
