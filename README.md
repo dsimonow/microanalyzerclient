@@ -4,6 +4,9 @@ DOESN'T ACTUALLY HAVE ANY TOOL FUNCTIONALITY THAN TO SHOW HOW SOMETHING LIKE THI
 
 KEINE AKTIVE ENTWICKLUNG
 NOT MAINTAINED
+
+#Beispielhafte Implementierung von Tools zum Tracen und Begutachten von Microservice Anwendungen
+
  
 Übersicht des Projektes:
 Das Projekt begutachtet und implementiert eine Handvoll Werkzeuge, die Entwicklern irgendwann bei der Umsetzung von Microservices helfen könnten, diese besser zu überwachen und Schwachstellen zu erkennen.
