@@ -18,3 +18,11 @@ Sammelt und stellt die Daten von Spring Sleuth dar.
 ## neo4j - Graphdatenbank
 Für die Visualisierung und Graphtraversierung von komplexen
 beziehungs basierten Anfragen.
+
+## How to run
+Das Projekt wird nicht aktiv entwickelt und dient als persönliches Projekt Kafka mit verschiedenen Systemen zu verwenden.
+
+Das Projekt sollte aber komplett mit dem Docker-Compose hochgefahren werden können. 
+
+Docker-Compose sollte alle Zugänge zu Kafka, neo4j und Zipkin anbieten.
+Für die Spring Implementation siehe das Bild. Diese Adressen einfach paar mal ausführen mit dem Browser und die Daten werden generiert.
